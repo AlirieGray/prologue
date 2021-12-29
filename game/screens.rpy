@@ -253,14 +253,10 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -730,13 +726,6 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"

@@ -12,16 +12,15 @@ define t = Character(_("Tam Un"), color="#98f8ff")
 # The game starts here.
 
 label start:
+    #### ACT ONE ####
     scene bg_village
     show yeni at left
 
     "The last bands of orange light have given way to blackness on the horizon, and the sounds of the village have died down as people retire for the night."
 
-    "Guess that means it’s time to go." 
+    "I swaddle Arizet in more layers than I normally would and wrap her tight to my body before putting on a thick cloak over both of us and strapping a travelling pack of dried food to my back." 
 
-    "I swaddle Arizet in more layers than I normally would and wrap her tight to my body before putting on a thick cloak over both of us." 
-
-    "It isn’t very cold this far north, even at night, but the farther we get from the coast and the closer to the mountains, the more harsh and biting the air will be. Even though it will be midday by the time we come in view of the mountains."
+    "It isn’t very cold this far north, even at night, but the farther we get from the coast and the closer to the mountains, the more harsh the cold will be. Even though it will be midday by the time we come in view of the mountains."
 
     "Arizet is unnaturally silent for an infant, and far too pale. She doesn’t make a noise as I slip out of the house and make my way to the edge of the village."
 
@@ -76,7 +75,7 @@ label lie:
 
 
 label flip:
-    y "That’s my business. What are you doing up so late, Azem? Surely all the sheep have been returned to the pen by now?"
+    y "I could ask you the same thing, Azem. Surely all the sheep have been returned to the pen by now?"
 
     show azem abashed at right
 
@@ -113,26 +112,51 @@ label main_branch:
 
     "But then I had my son. Since then, I never fantasized about leaving."
 
-    "Even when he was kidnapped and taken to the city, I couldn’t leave. I had friends by then who had suffered the same loss."
+    "When he was kidnapped and taken to the city, I felt the same grief as when I had first been sent away from my family, like a piece of myself had been ripped out. Only worse this time." 
+    
+    "But I wasn't alone anymore. By then, I had friends who had suffered the same loss. They kept me alive."
 
-    "Though they didn’t know why, every few years a company of soldiers would ride in from the city, taking a group of children between the ages of four to seven with them."
+    "Though no one knew why, every few years a company of soldiers would ride in from the city, taking a group of children between the ages of four to seven with them."
 
     "It happened to the neighboring villages, too. And though they all lived in fear of it happening to their own children, their roots were too deep in the land for them to leave." 
 
-    "They weren’t like my own clan, wandering from pasture to pasture, and from oasis to oasis, carrying all of their belongings on their horses and their carts."
+    "They weren’t like my own clan, wandering from pasture to pasture, and from oasis to oasis, carrying all of their belongings on their horses and carts."
 
-    "And I wasn’t either, I had to admit. I had planted roots, too." 
+    "And I wasn't the same as I had been when I left my clan, I had to admit. I had planted roots, too." 
 
-    "I walked until the sun began to rise, following the arc of the Hunter's Bow south."
+    "I walk until the sun begins to rise, following the arc of the Hunter's Bow south."
+
+    scene bg_steppe
+    show yeni at left
+
+    "By now, my husband will have noticed I'm gone, and will have alerted the neigbors. They'll be searching for me."
+
+    "But they don't know the steppe as I do. I'm not worried about them finding me, even though it's slow going for me on foot and with a baby."
+
+    "Every hour or so I pull the folds of my dress aside so Arizet can nurse, making sure the cloak is still covering her from the cold."
+
+    "She's eating, but not enough. Her grip on life is fading, and I have to fight down a swell of panic, even as I can see the peaks of the mountains rising to meet me on the horizon."
+
+    "I won't lose another child."
+
+    "The air is growing cold and dry, biting the exposed skin of my face and hands. But I feel somewhat comforted by the plains of my youth."
+
+    "I was born for these harsh lands, from a long line of herders and warriors too proud and restless to stay in one place very long."
+
+    "I sing a travelling song under my breath, one my Auntie Yerta taught me as a girl."
 
 
+    #### ACT TWO ####
+
+    "By midday, I have to stop to rest and eat."
+
+    "I pull the "
 
 
+    #### ACT THREE ####
 
-
-
-
-
+label ritual:
+    "The ritual has three parts. All of our rites start with an offering."
 
 
 

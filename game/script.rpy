@@ -7,7 +7,7 @@ define y = Character(_("Yeni"), color="#5a0ee7")
 define a = Character(_("Azem"), color="#006300")
 define w = Character(_("??"), color="#006300")
 define u = Character(_("Urta"), color="#683904")
-define t = Character(_("Tam Un"), color="#98f8ff")
+define t = Character(_("Tzeh tl'Un"), color="#98f8ff")
 
 
 # The game starts here.
@@ -19,9 +19,9 @@ label start:
 
     "The last bands of orange light have given way to blackness on the horizon, and the sounds of the village have died down as people retire for the night."
 
-    "I swaddle Arizet in more layers than I normally would and wrap her tight to my body before putting on a thick cloak over both of us and strapping a travelling pack of dried food and a waterskin to my back." 
+    "I swaddle Arizet in more layers than I normally would and wrap her tight to my body before pulling a thick cloak over both of us and strapping a travelling pack of dried food and a waterskin to my back." 
 
-    "It isn’t very cold this far north, even at night, but the farther we get from the coast and the closer to the mountains, the more harsh the cold will be. Even though it will be midday by the time we come in view of the mountains."
+    "It's warm this far north, even at night. But the farther we get from the coast and the closer to the mountains, the colder and harsher it'll be, even when the sun comes up."
 
     "Arizet is unnaturally silent for an infant, and far too pale. She doesn’t make a noise as I slip out of the house and make my way to the edge of the village."
 
@@ -69,6 +69,9 @@ label lie:
     a "Well, be safe out there, Auntie. Are you sure you wouldn’t like someone to escort you?"
 
     y "No, it has to be me alone. Give my greetings to your parents for me, would you?"
+
+    scene bg_village
+    show yeni at left
 
     "I hurry off before he has the chance to ask any more questions." 
 
@@ -156,7 +159,11 @@ label main_branch:
 
     "She's asleep, breathing slowly. Her skin is still a sickly pale color."
 
+    show yeni_worried at left
+
     y "Hold on, Ari. I'm taking you to someone who can help."
+
+    show yeni_neutral at left
 
     "After eating the food in the pack, I shake the cloth out and wrap it around my shoulders as another layer against the cold."
 
@@ -188,9 +195,9 @@ label main_branch:
 
     #### ACT TWO ####
 
-    scene un_camp
+    scene camp
     show yeni at left
-    show urta_angry at right
+    show urta_neutral at right
 
     u "Absolutely not. You shouldn't have come here, Yeni."
 
@@ -198,11 +205,61 @@ label main_branch:
 
     "Her words stung. I thought she'd be happier to see me, at least, even if she wasn't thrilled about what I had come to ask for."
 
-    y "Please, Auntie. You're my last hope. If I lose Ari, I'll die. I swear it, I'll die."
+    y "Please, Auntie. You're my last hope. If I lost Ari, I think I'd die."
+
+    show yeni_neutral at left
+
+    u "I know. You're just doing what you feel you have to for your daughter."
+
+    u "But what you're asking for, I don't even think it's possible. Let alone a good idea."
+
+    y "You always said there was great power in the steppe, in the mountains. Power that our ancestors used, that still guides our way of life."
+
+    y "You told me it could help me in my darkest times, if I just asked for it."
+
+    y "I'm asking you now. Show me the ritual. I know where to go, just show me how to call--"
+
+    scene camp_darkened
+    show urta_angry at right
+    show yeni_worried at left
+
+    u "TZEH TL'UN IS NOT TO BE TRIFLED WITH!"
+
+    "Suddenly her voice is thunderous. I feel static fill the air around me."
+
+    scene camp
 
     show urta_neutral at right
+    show yeni_worried at left
 
-    u ""
+    u "What makes you think she'd help you, anyway? Even if we could succeed in calling her from her hiding place."
+
+    u "Which no one has managed to do in a thousand years, I might add."
+
+    show yeni_neutral at left
+
+    y "I don't know, really. She's a tl'Un. We always help each other, and she was the strongest of us."
+
+    u "Until she wasn't."
+
+    y "What do you mean?"
+
+    u "You only know part of the story. The one we tell children, and those not trained in magic."
+
+    u "It's time I told you the rest of Tzeh's story, and then you'll understand why I cannot help you."
+
+    scene story_bg
+
+    "{i}As Tzeh came of age, the steppe was being torn apart by clan war.{/i}" 
+
+    "{i}Blood soaked the grasslands like a marsh. Warriors would raid the camp of an enemy clan and slaughter their animals, so that everyone from the youngest child to the oldest man would starve.{/i}"
+
+    "{i}The Un clan, which Tzeh was adopted into as a young girl, was small and weak. She knew that her family would not survive long if the battles continued.{/i}" 
+
+    "{i}All children of the steppe feel a connection to Mratam Kah. It is the holiest of holy peaks in our beloved mountains, and even during the time of Tzeh’s life it held great importance.{/i}"
+
+    "{i}But Tzeh had always felt a stronger pull to the sacred mountain, a call that gnawed at her psyche more insistently as the war grew closer and more disastrous.{/i}"
+
 
 
     #### ACT THREE ####

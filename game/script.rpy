@@ -1,8 +1,4 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
+﻿# CHARACTERS
 define y = Character(_("Yeni"), color="#5a0ee7")
 define a = Character(_("Azem"), color="#006300")
 define w = Character(_("??"), color="#006300")
@@ -10,8 +6,7 @@ define u = Character(_("Urta"), color="#683904")
 define t = Character(_("Tzeh tl'Un"), color="#98f8ff")
 
 
-# The game starts here.
-
+# START
 label start:
     #### ACT ONE ####
     scene bg_village
@@ -175,7 +170,7 @@ label main_branch:
 
     "But that fear was far overshadowed by the fear of losing Arizet."
 
-    "No one in the village could help me. They didn't know anything of magic, or even medicine. They had lost it all when their ancestors planted roots and began to adopt the way of the coastal cities."
+    "No one in the village could help me. They don't know anything of magic, or even medicine. They lost it all when their ancestors planted roots and began to adopt the way of the coastal cities."
 
     "Now they practiced a bastardized version of our ancient religion, stripped of all its power and reduced to symbolic rites and empty words."
 
@@ -250,6 +245,8 @@ label main_branch:
 
     scene story_bg
 
+    "Her words weave an image in my mind, transporting me one thousand years back."
+
     "{i}As Tzeh came of age, the steppe was being torn apart by clan war.{/i}" 
 
     "{i}Blood soaked the grasslands like a marsh. Warriors would raid the camp of an enemy clan and slaughter their animals, so that everyone from the youngest child to the oldest man would starve.{/i}"
@@ -260,9 +257,76 @@ label main_branch:
 
     "{i}But Tzeh had always felt a stronger pull to the sacred mountain, a call that gnawed at her psyche more insistently as the war grew closer and more disastrous.{/i}"
 
+    "{i}The day of the equinox was approaching, and the leaders of the largest clans were planning to arrange a truce through the marriage of one of the great kings to the daughter of another.{/i}"
+
+    "{i}But the night before the equinox, a group of warriors raided the Un clan, and slaughtered everyone they could find. Only Tzeh survived.{/i}"
+
+    "{i}No one knows why the warriors raided that day, perhaps they thought the Un clan would be an easy target because of their small size and lack of political standing.{/i}"
+    
+    "{i}We’ll never know why, since even name of that clan is now lost to history. Because the revenge that Tzeh tl’Un exacted was swift, and complete.{/i}" 
+
+    "{i}On the day of the equinox, Tzeh ascended the sacred mountain that had called her name all her life.{/i}"
+
+    "{i}There she found a wellspring of power and knowledge, and drank from it. From that day forward, she wielded the power of a god.{/i}"
+
+    "{i}She came down the mountain and unleashed her grief and anger on the assembled clans. The sky was darkened, though there were no clouds.{/i}"
+    
+    "{i}She killed the leaders of every clan, and their families down to the last child.{/i}"
+
+    "{i}It took her no more effort than the blink of an eye.{/i}"
+
+    "{i}The survivors fell to their knees in awe and fear, and Tzeh became Queen of the Steppe.{/i}"
+
+    "{i}She united the warring clans under her name, and forged an empire that spanned from the trading ports of the northern coast to the southern tundra.{/i}"
+
+    "{i}It wasn't just her magical prowess that caused the people to follow her, or allowed her success in battle.{/i}"
+    
+    "{i}She also had a natural inclination for leadership, a charisma that won people to her side, and a ruthless and brilliant mind for military strategy.{/i}"
+
+    "{i}In her fiftieth year, she announced that she was being called back to the mountain, and that she didn't know when she would return.{/i}"
+
+    "{i}This is the story you know. Without Tzeh's leadership, her inner circle tore itself apart to grab power for themselves.{/i}"
+
+    "{i}The empire crumbled.{/i}"
+
+    "{i}Since then, we have been waiting for her to return and bring back the glory of the empire she forged.{/i}"
+
+    "{i}This is the story you know.{/i}"
+
+    "{i}But what you haven't been told is the toll that Tzeh's power took on her mind, on her soul.{/i}"
+
+    "{i}Tzeh was changed by her journey to the top of Mratam Kah.{/i}"
+    
+    "{i}She was consumed by otherworldly visions, and she possessed a bloodlust that unnerved even the most battle-hardened of her generals.{/i}"
+
+    "{i}It wasn't the mountain that called her back to it.{/i}"
+    
+    "{i}It was her own inner circle, motivated as much by fear of what Tzeh had become as they were by their own ambition, that betrayed Tzeh and banished her to the other realm.{/i}"
+    
+    "{i}Those that pray for her return do not know what they ask for. But those of us with this knowledge know we would be seen as heretics and traitors to our own history if we revealed it widely.{/i}"
+    
+    "{i}We share it only with those trained in magic so that they know the danger of the path they walk.{/i}"
+
+    "{i}Tzeh tl'Un was imprisoned to keep the children of the steppe safe from her insatiable wrath.{/i}"
+
+    "{i}She must never be released, or the whole world will suffer the consequences.{/i}"
+
+    scene camp 
+    show yeni_neutral at left
+    show urta_neutral at right
+
+    u "Do you understand now?"
 
 
     #### ACT THREE ####
+
+    scene camp
+
+    "The story unnerves me, but Auntie Urta's moralizing tale isn't going to dissuade me now."
+
+    "If she won't help me, I'll "
+
+    scene mountain
 
 label ritual:
     "The ritual has three parts. All of our rites start with an offering."

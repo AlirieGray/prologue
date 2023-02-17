@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 33: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Tell the truth"
-                    ^
+File "game/script.rpy", line 11: unexpected EOF while parsing
+    im.Scale("yeni_angry.png", 500, 700)3
+                                         ^
 
-Ren'Py Version: Ren'Py 7.4.10.2178
-Thu Dec 22 22:33:17 2022
+Ren'Py Version: Ren'Py 7.4.11.2266
+Sun Jan 29 14:34:22 2023

@@ -7,9 +7,9 @@ define y = Character("Yeni")
 define u = Character("Urta")
 define w = Character("??")
  
-image yeni_neutral_scaled = im.Scale("yeni_neutral.png", 500, 700)
-image yeni_angry_scaled = im.Scale("yeni_angry.png", 500, 700)
-image yeni_scared_scaled = im.Scale("yeni_scared.png", 500, 700)
+image yeni neutral_scaled = im.Scale("yeni_neutral.png", 500, 700)
+image yeni angry_scaled = im.Scale("yeni_angry.png", 500, 700)
+image yeni scared_scaled = im.Scale("yeni_scared.png", 500, 700)
 
 # The game starts here.
 
@@ -22,7 +22,8 @@ label start:
 
     queue music no_bell_fade loop
 
-    show yeni_neutral_scaled at left
+    show yeni neutral_scaled at left
+
     "It’s nearly sunset by the time the village is in sight."
 
     "I glance down to check on my daughter again, swaddled tight against the cold of the journey here."
@@ -31,21 +32,25 @@ label start:
 
     "Her eyes are closed, her skin clammy." 
 
+    "I'm relieved to have made it before nightfall and not have to set up camp again."
+
     "The journey here wasn’t easy on her, but I had no other options."
 
     "Babies born in a winteryear are supposed to be hardy, healthy, the way babies born in a summeryear are said to be prone to colic."
 
-    "Arizet was born on the first day of the new year, named for the fierce bird that travels north to the coast each winteryear seeking warmth, and returns south when the sun is strong again over the steppe."
+    "Arizet was born on the first day of the new year. I named for the fierce bird that travels north to the coast each winteryear seeking warmth, and returns south when the sun is strong again over the steppe."
 
-    "But in the past three days since her birth, she has just barely clung to life. She’s hardly nursed, hardly opened her eyes, and has yet to make a sound."
+    "But she wasn't supposed to arrive this early." 
 
-    "None of the standard remedies worked. Not the advice of the aunties or the medicine woman, though they had always worked for my first child when he fell ill."
+    "In the past week since her birth, she has just barely clung to life. She’s hardly nursed, hardly opened her eyes, and has yet to make a sound."
+
+    "None of the usual remedies helped, none of the advice that had worked for my first child when he fell ill."
 
     "It sends an ache through my chest to think of him, but I push it aside."
 
-    "By the third day, Ari’s condition was only getting worse, and it was clear to me I had to look elsewhere if I was going to save her."
+    "By the third night, Ari’s condition was only getting worse, and it was clear to me I had to look elsewhere if I was going to save her."
 
-    "So just before the sun rose this morning, I got on my old mare Hialen and left the Anaak clan for the first time since I married into it."
+    "So just before the sun rose that morning, I got on my old mare Hialen and left the Anaak clan for the first time since I married into it."
 
     "Now I just have to find the woman I’ve only heard about in rumors. My last hope to save my daughter."
 
@@ -55,15 +60,15 @@ label start:
 
     y "I’m looking for a woman named Urta tl’Eyun."
 
-    w "Is that right? And what are you going to do once you’ve found her?"
+    w "Is that right?"
 
-    y "Ask for her help. My sister-in-law says she’s a woman wise in medicine who helped her cousin when her baby was sick."
+    y "My sister-in-law says she’s a woman wise in medicine who helped her cousin when her baby was sick."
 
     w "Hmm, so she helped the cousin of a sister-in-law. That’s not a lot to go on. This ‘Urta’ could be a quack for all you know, couldn’t she?"
 
     y "No, she–"
 
-    w "A grifter. An old woman with her head in the Web."
+    w "A grifter. An old Lattice-addled woman."
 
     "I’ve heard enough. I don’t have time for this."
 
@@ -85,7 +90,7 @@ label start:
 
     u "You said you were looking for Urta tl’Eyun. Well, you’ve found her!"
 
-    y "So, you’re… her?"
+    y "Wait. You’re… her?"
 
     u "That’s me, Urta the miracle worker, apparently. Eh, I’ve heard worse, at least."
 
@@ -93,11 +98,11 @@ label start:
 
     y "Please, you have to help me. I–"
 
-    u "I have to do nothing of the sort. You haven’t even told me your name."
+    u "Slow down, child. You haven’t even told me your name."
 
     y "Yeni tl’Anaak."
 
-    u "Well, Yeni tl’Anaak. I don’t work for free, not outside the Eyun. And more importantly, I don’t even know if I can help your daughter. Despite what you’ve heard. I can try, but I can make no promises."
+    u "Well, Yeni tl’Anaak. I don’t work for free, not outside the Eyun. And more importantly, I don’t even know if I can help your daughter. Despite what you’ve heard. I can try, but I can make no promises." # TODO: player has to pick how to convince her, one of the ways is offering money since it would be considered gauche for her to just ask
 
     "I sigh. I guess that’s to be expected."
 
@@ -111,33 +116,21 @@ label start:
 
     u "How old is she?"
 
-    y "Three days."
+    y "A week. But she was born early."
 
     "She stops counting the gold abruptly."
 
-    u "You brought an infant, not even past her (age ritual ~1 week to 1 month?) all the way from Anaak?"
+    u "You brought an infant all the way from Anaak territory? All the way south of the Naang river?"
 
     y "That’s right."
 
-    u "Hmm. Does your family know the amount you’re shelling out to save an infant? Wait, do they even know you’re here?"
+    u "Hmm. Does your family know the amount you’re shelling out? Wait, do they even know you’re here?"
 
     y "...No."
 
     u "Hmm."
 
-    "She’s guessed the whole story, no doubt. It would be seen as highly wasteful and inappropriate, even shameful, if my relatives by marriage knew the lengths I was going to in order to save an infant."
-
-    "It’s normal to seek medical care for a baby that is born ill or develops an illness in their first year. But the first month is a period when the soul is just passing through the body, which is why many babies die around this time, because the soul decides to move on."
-
-    "Many souls decide only to visit this plane, not to stay, and those are the babies that live no more than a week or two."
-
-    "This is also why mothers tend to die in childbirth, because of the pull caused by the child’s spirit being partially in one world and partially in the next."
-
-    "After a month, the infants go through (age ritual). This is when their souls are fully realized in their bodies and there’s a big celebration."
-
-    "So while the midwives and the doctor might help me treat my daughter in her first days of life, they would just as likely tell me: this one is just a visitor."
-
-    u "Well, you’ve went to a lot of trouble. This "
+    u "Well, you’ve went to a lot of trouble."
 
     "She pockets the pouch of gold."
 
@@ -145,7 +138,7 @@ label start:
 
     "Relief washes over me so strong I almost feel my knees go weak, the exhaustion of the past few days catching up with me."
 
-    y "Thank you, Auntie, (blessing of some sort.)"
+    y "Thank you, Auntie." # blessing of some sort
 
     "She waves her hand."
 
@@ -153,108 +146,235 @@ label start:
 
     "She leads me to one of the houses on the outskirts of the village, and shows me a place to tie my mare."
 
-    "Her daughter-in-law, who introduces herself as Nali tl'Eyun, serves Urta and I both sheep yogurt with salt and fresh green (herb name), and some boiled sheep rump in sourbroth."
+    "Her daughter-in-law, who introduces herself as Nali tl'Eyun, serves Urta and I both sheep yogurt with salt and fresh green, and some boiled sheep rump in sourbroth." #herb name
 
-    "I eat all of it gratefully and a little too quickly, it's been a long day on the road."
+    "I eat all of it gratefully and a little too quickly. "
 
     "After we eat, Nali serves us tea and is pulled outside to resolve something that her two young sons assure her is an urgent situation."
 
     "My breath catches when I see them tug her with their small hands. I look down at Ari, still asleep in her swaddle."
 
-    y "She barely nurses. At this rate she has days... maybe less."
+    y "She hasn't made hardly a sound since she was born. She barely nurses, mostly just sleeps."
 
-    # show urta sad/concerned
+    u "Let me take a look at her."
+
+    "I watch as Urta listens to her breathing, her heart, and gently opens her eyes and her mouth to check them."
+
+    "Then she closes her eyes and is silent for a moment."
+
+    "It doesn't look like she's doing anything. But I can feel a prickling on my arms, like the static before a lightning storm."
+
+    "For a second, I think I see thin lines, like spiderwebs, glowing faintly around her hands as they trace over my daughter's tiny limbs."
+
+    "I want to ask Urta what she's doing, but she seems so deep in concentration that I don't want to disturb her."
+
+    "Finally, she sighs and steps back."
+
+    u "I'm sorry, child. There's nothing I can do for her."
+
+    # show Yeni angry 
+
+    y "You just looked at her! How do you know there's nothing you can do? You won't even try?"
+
+    u "There's nothing to try, girl. A baby born this early rarely makes it past their first night."
+
+    u "You must know this already. Don't beat the horse because its rider brings bad news."
+
+    y "What was that spiderweb thing you were doing? Can't you use that to help her?"
+
+    # show urta surprised
+
+    u "You could see that?"
+
+    # show urta neutral
+
+    y "I knew it! You were doing something. So do it again. Please just try."
+
+    u "It doesn't work like that. No one has used the Lattice for healing since the time of Tzeh and maybe the two or three generations after that."
+
+    # show yeni surprised 
+
+    y "What? That spiderweb thing, that's how Tzeh tl'Un was healed?"
+
+    y "And what do you mean, the generations after? The miracles were only given in the prophet's lifetime."
+
+    u "It's not a 'spiderweb.' It's the Lattice."
+
+    u "And it wasn't only using for healing during Tzeh's life. Some of her disciples were able to access this power in the years following her death, as well."
+
+    u "And some of them were able to pass on the skill."
+
+    u "But hardly anyone even knows the basics of how to wield it anymore."
+
+    u "And certainly it's not some miracle cure for premature births."
+
+    y "But you said it used to be used for healing. So it's possible."
+
+    u "I don't want to promise you something I can't give."
+
+    y "Just tell me the truth."
+
+    # show yeni crying
+
+    y "Please, I've already lost one child."
+
+    y "I couldn't survive if I lost Ari, too."
+
+    y "I know you don't know me. I don't have a lot of money to give you. But you're my only hope."
+
+    y "If you know something, if there's {i}any{/i} chance it could save my daughter, please tell me."
+
+    "She seems to hesitate a moment, but relents with a heavy sigh."
+
+    # show yeni neutral
+
+    u "It's dangerous, what you're asking for. There are only stories. I don't even know how true they are."
+
+    u "When Tzeh came down from Mratam Kah with the revelations, with her wounds healed and her arms restored, she found she had also returned with special gifts and powers."
+
+    u "Some of these we know about already through the revelations."
+
+    u "She was never able to heal others the way she had been healed."
+
+    u "But some of her disciples, both in her time and in the years after her death, did receive those miracles."
+
+    # show yeni surprised
+
+    y "How did they do it?"
+
+    u "According to the few stories that have been preserved, they went to the peak of Mratam Kah with pure hearts and asked the Three Brothers to heal them."
+
+    y "And they were?"
+
+    u "Yes. One of Tzeh's closest disciples had his vision restored many years after her death."
+    
+    u "And one of his students was also able to recover from nearly fatal battle wounds in the "
+
+    "I want to believe, but there's something bothering me about all this."
+
+    y "Why is there no record of these miracles? Why do none of the priests have any record of anything like this happening after Tzeh's death?"
+
+    u "Tzeh's disciples wanted her legacy and message to be preserved only in the revelations, not by the word of anyone who lived after her time."
+
+    u "They made sure that only the "
+
+    "........."
+
+    u "We'll leave at first light."
 
     stop music fadeout 2.0
 
-    show yeni_neutral_scaled at left
-
+    show yeni neutral_scaled at left
 
     ################ Part Two: The Dream ##################
 
-    "The two moons are high in the sky. We've been travelling the better part of the night."
-
-    "The cold of night bites like a grass spider. It's the kind of cold that will burn your skin if you leave it exposed."
-
-    "I'm exhausted, but it won't be safe to sleep until the sun rises."
-
-    "I keep Arizet close to my body, inside my overcoat."
-
-    "It's considered inadvisable to travel the steppe at night, especially during a winteryear."
-
-    "And for two women alone with a newborn, it would probably be considered downright suicidal."
-
-    "But I have to make as much progress as I can, in as little time as possible."
-
-    "Normally the distance from my village to the base of the mountain would take a travelling clan three days to cross."
-
-    "I don't have three days. I don't even know if I have one day, or one hour to spare."
-
-    "In the war days of our clan, our ancestors used to cross the steppe from west to east or south to north without stopping even to eat or water the horses."
-
-    "Those days have long passed, but still any child of the steppe is born with one foot in the saddle."
-    
-    "I remind myself that the mountains draw closer with each step, but I cannot see them. Only the dim glow of my lantern, and the mane of my mare."
-
-    "In the silence and darkness, it's too easy to succumb to memories."
-    
-    "My son Ohzin, crying out to me for help. The helplessness I felt when he was torn from my arms, and dragged away."
-
-    "The guilt and every sleepless night I've spent since then."
-
-    "The other women told me it would get easier, but it never has."
-
-    "Still, it was only them who kept me alive, kept me from losing hope altogether."
-
-    u "There, the oasis."
-
-    y "I see it. We don't have time to stop. Another few hours and--"
-
-    u "We've been riding all night. The horses need water and grazing and we both need some sleep."
-
-    u "The hardest part will be the climb up the mountain, not this little jaunt."
-
-    "I sigh, but she's right."
-
-    y "Alright. But just for a couple hours. Then we need to move on."
-
-    u "Just for a few hours."
-
-    "We get off our horses and begin to untack them."
-
-    "Next I help Urta gather some branches for a fire, and I suddenly notice--"
-
-    y "It's odd not to find anyone here. Usually there's at least a party of merchants camped here, if not a whole clan."
-
-    u "Mm."
-
-    "But at this time of year, everyone is already farther west, travelling to the gathering of the clans."
-
-    "Business deals and trade negotiations are made at that gathering every year, but most importantly marriages are arranged between clans."
-
-    "That's how we keep the peace on the steppe. It's how I wound up with the Anaak, the northernmost of the twenty or so clans."
-
-    u "You sleep first. I'll wake you."
-
-    "I go to sleep..."
-
-    # Dream transition here?
+    scene camp_sketch
 
 
-    scene battle_720
+    "After a day of travelling, we have to stop for the night."
 
+    "I move gather dung and some dry chaparral for the fire and help Urta set up the ger."
 
+    "We work in silence, but I can't help glancing over at Urta, wondering about her past."
+
+    u "Well, spit it out."
+
+    y "Huh?"
+
+    u "You're wondering how I know how to set up a ger, when I was raised in a village?"
+
+    #show yeni surprised 
+
+    y "What, did you use your magic powers to read my mind?"
+
+    u "No, child. It's just written all over your face."
+
+    u "Well, if you have questions, then ask."
+
+    menu: 
+        "What should I ask her?"
+
+        "So how {i}do{/i} you know how to set up a ger?":
+
+            u "I wasn't born in Eyun. Actually I was born into clan Un."
+
+        "Have you ever been to the Mratam?":
+
+            # u "No. Actually, I've never even been this far south."
+
+            # y "Never?"
+
+            # u "No. My grandparents went north looking for a more comfortable life, and I think they were in some bad politics with the local lords."
+
+            # u "They were probably aiming to go all the way to the coast like a lot of that generation, but stopped at the river Eyuna and just stayed there."
+
+            y ""
+
+        "How did you learn to use your powers?":
+
+            u "I had a teacher."
+            
+            u "He was a little... eccentric. But he passed down the knowledge pure, unadulterated."
+
+            "Her voice sounds wistful, or is it regret?"
+
+            u "Not like some of the charlatans these days. They have no respect for the tradition, they just want what they think it can give them."
+
+            u "Though of course, it can't actually give them anything if they don't understand it."
+
+            u "They think they can replicate what they do in the northern universities, even though that's a bastardization of our own practice."
+
+            # maybe at the end Yeni has the option to be her apprentice?
+
+            y ""
+
+    # loyalty came from Tzeh's personal relationships a la Hilo
+
+    u "Get some sleep. You'll need it for tomorrow."
+
+    y "Goodnight..."
+
+    scene black with fade
+
+    "It's hard to fall asleep, my mind is swimming with doubt and fear."
+
+    play music foreboding loop
+
+    "I keep checking Ari, sleeping on my chest."
+
+    "She's hanging on, my brave girl. I'm not giving up on her."
+
+    "At last, I drift away into sleep..."
+
+    # Dream transition here
+
+    scene battle_720 with fade
+
+    "{i}Battle flashback.....{/i}"
+
+    "{i}.....{/i}"
 
     # scene camp again
 
+    scene camp_sketch with fade
+
+    show yeni scared_scaled at left
+
     stop music fadeout 2.0
 
-    "What was that?"
+    "What was that??"
 
-    
-    scene black
+    "It didn't feel like any dream I've ever had."
 
-    play sound wind_sound loop
+    "It was so real..."
+
+    show yeni neutral_scaled at left
+
+    "??"
+
+    scene black with fade
+
+    scene mountain_720 with fade
     
     "And thus the climb begins."
 
@@ -277,12 +397,10 @@ label start:
     "..."
 
     stop sound fadeout 2.0
-    
-    scene mountain_720 with fade
 
-    play music foreboding loop
+    play music mystical loop
 
-    show yeni_neutral_scaled at left
+    show yeni neutral_scaled at left
 
     "At long last, as the sun crests in the sky and begins to make its earthside return, we reach the peak."
 
@@ -292,49 +410,13 @@ label start:
 
     # play lighting crack sound
 
-    show yeni_scared_scaled at left
+    show yeni scared_scaled at left
 
     "!!"
 
     "What is this...?"
 
-    w "Well, well, little one."
 
-    w "It's been a while since anyone knocked on my door. At least, I think it has. What year is it?"
-
-    "I hear her voice, it's deep and strong, though not through my ears. It sounds like it's coming from everywhere at once."
-
-    "Shit, I haven't even thought about how I should address her."
-
-    y "Revered Prophet, this humble servant--"
-
-    w "Oh, enough! I just asked what year it is. It's a simple enough question."
-
-    show yeni_neutral_scaled at left
-
-    y "It's 1012."
-
-    w "That makes no sense. I was born in 3037." # TODO what are the different calendars called 
-
-    y "We changed the calendar to year one after your ascension."
-
-    w "So it's been a thousand years..."
-
-    w "Well, in all that time no one's ever come by just to have tea. What is it you want?"
-
-    y "It's my daughter... She's dying."
-
-    y "She was born frail. She doesn't nurse. Please, this humble servant begs you. Help my daughter. Save her."
-
-    w "Hmm... Well I don't know what you expect me to do from here."
-
-    y "From here?"
-
-    w "Yes, girl, from the other side of the Web. Keep up!"
-
-    w "Do I look like a medicine woman? No, I don't look like anything at all! I don't have a body anymore."
-
-    w "If I could have "
 
     # sound effect
 

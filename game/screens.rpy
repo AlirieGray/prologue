@@ -136,7 +136,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/testGroup.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -151,7 +151,7 @@ style namebox:
 style say_label:
     properties gui.text_properties("name", accent=True)
     xalign gui.name_xalign
-    yalign 0.5
+    yalign 0.2
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
@@ -250,8 +250,8 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.5
-            yalign 1.0
+            xalign 0.8
+            yalign 0.98
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
@@ -298,6 +298,10 @@ screen navigation():
         if main_menu:
 
             textbutton _("Start") action Start()
+            
+            yalign 0.38
+            xpos 0.61
+
 
         else:
 
@@ -363,16 +367,16 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
-    if gui.show_name:
+    # if gui.show_name:
 
-        vbox:
-            style "main_menu_vbox"
+    #     vbox:
+    #         style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+    #         text "[config.name!t]":
+    #             style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+    #         text "[config.version]":
+    #             style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -385,7 +389,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "images/main_menu.png" #TODO resize based on window/screen size
 
 style main_menu_vbox:
     xalign 1.0
@@ -777,16 +781,6 @@ screen preferences():
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            bar value Preference("voice volume")
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
 
                     if config.has_music or config.has_sound or config.has_voice:
                         null height gui.pref_spacing

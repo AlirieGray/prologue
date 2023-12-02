@@ -136,7 +136,9 @@ label start:
 
     "I decide to just show her. I go to the bag I left by the door, under my heavy overcoat. I reach inside and pull out the strange artifact."
 
-    "It's a disk shaped like two soup bowls stacked one upside-down on the other. It's heavy and gray, but not made of any stone or metal I've ever seen before. It has a strange gleam to it, almost like glass, and it's covered in these tiny grooves and raised circles that form a web-like pattern across the surface."
+    "It's a disk shaped like two soup bowls stacked one upside-down on the other. It's heavy and gray, but not made of any stone or metal I've ever seen before."
+    
+    "It has a strange gleam to it, almost like glass, and it's covered in these tiny grooves and raised circles that form a web-like pattern across the surface."
 
     "I've spent countless hours staring at it over the past week it took for me to travel here. But I still haven't been able to discern any pattern in these strange markings."
 
@@ -176,7 +178,9 @@ label start:
 
     "I don't trust my face not to betray me, so I look away."
 
-    y "He asked me to bring it to the top of the holy mountain. He didn't tell me why. He just said there was a ritual I had to do with it once I got there.  He kept saying it was important, more important than anything else."
+    y "He asked me to bring it to the top of the holy mountain. He didn't tell me why. He just said there was a ritual I had to do with it once I got there."
+    
+    y "He kept saying it was important, more important than anything else."
 
     y "He made me promise. So I did."
 
@@ -196,6 +200,12 @@ label start:
 
     u "Get some sleep. I'll pack for us."
 
+    "I want to protest, to demand she explain what she knows."
+
+    "But then Ari starts crying, and my mother is already standing up to lay out felts for us to sleep on."
+
+    "It's another few days' journey to the mountain. We'll have nothing else to do but talk, and I'm going to get the answers I need."
+
     # Part Two: The Camp
 
     scene black with fade 
@@ -206,13 +216,53 @@ label start:
 
     scene camp_720 with fade
 
-    "Good place to camp. todo: add camp scene here..."
+    show yeni neutral_scaled at left
+
+    play sound night_crickets loop
+
+    # play fire/outdoors ambience 
+
+    "After three days of travel, we approach the base of the tallest, holiest mountain."
+
+    "The one the prophet herself ascended to receive her gifts."
+
+    "The early summeryear weather is fair for traveling, but it has turned cold as we began to ascend in altitude."
+
+    "We'll make camp here for the night, and begin the climb up the mountain in the morning."
+
+    "We set up the shelter, then I go to collect grass and dry dung for the fire, with Ari strapped to my back."
+
+    "When I return and build up the fire, my mother sets a pot of water and dried meat to boil over it."
+
+    "I unwrap Ari from the swaddle and set her on her stomach on the felt floor."
+
+    "She props herself up somewhat unsteadily, gazing between me and the grandmother she only met a few days ago. I give my daughter a wide smile."
+
+    y "Who's that?"
+
+    "Ari gurgles and coos in response."
+
+    y "That's your momo. Tell her hi!"
+
+    "My mother gives Ari a beaming smile, then a surprised look, and then a raised eyebrow. Ari gazes back with a look of consternation."
+
+    "Then she reaches over and picks up Ari, sitting the baby up in front of her. Ari's arms flail about wildly and she graps at her grandmother's hands."
+
+    u ".."
+
+    hide yeni 
+
+    "..."
+
+    # show the camp scene by itself for a couple lines
+
+    stop sound fadeout 2.0
 
     scene black with fade 
 
     "It's hard to fall asleep, my mind is swimming with doubt and fear."
 
-    play music foreboding loop
+    play music foreboding fadein 2.0 loop
 
     # dream transition
 
@@ -240,27 +290,45 @@ label start:
 
     scene black with fade
 
-    scene mountain_720 with fade
-
-    # wind sound
-
-    play sound wind_sound loop
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     # Part Three: The mountaintop
+
+    play sound wind_sound loop
+
+    scene mountain_720 with fade
+
+    show yeni neutral_scaled at left
+
+    "And so, the climb begins."
+
+    "Less than halfway up, the path becomes too irregular for the horses to continue."
+
+    "Approaching the tree line, we tie our horses to one of the few remaining trees near a small brook."
+
+    "The way we're travelling can't even properly be called a path at this point, since large stretches consist of climbing over boulders and winding through plants."
+
+    "But soon the vegetation becomes even sparser, replaced by only rocks, and then snow and ice."
+
+    "The air begins to thin, and we need to take breaks more and more frequently to catch our breath."
+
+    "Each time I stand up from a rest and begin walking, I wind up out of breath again within a few minutes, my lungs stinging."
+
+    "I feel nauseated, and even worse is my constant fear that the lack of air is even worse for Ari."
+
+    "But we keep walking. Slowly, painfully."
+
+    "When we finally reach the peak, I sink to my knees in the snow."
+
+    stop sound fadeout 2.0
+
+    "My whole body is trembling. It feels like all the grief and anger from the past year is hitting me all at once."
+
+    "I just want to cry, or scream, or just grab fistfuls of snow until my hands turn numb and raw and sting with pain."
+
+    "But I'm too dehydrated to and exhausted to cry. To do anything but sit here, and regain my breath."
+
+    "My mother comes to stand next to me."
 
     u "Are you ready?"
 
@@ -288,7 +356,13 @@ label start:
 
     "Then, a defeaning boom like the snap of thunder, shuddering all through my body. And something incomprehensible materializes before us."
 
-    play music portal
+    scene portal_720
+
+    show yeni scared_scaled at left
+
+    play music portal_mp3
+
+    "..."
 
     y "What is it??"
 
@@ -300,9 +374,17 @@ label start:
 
     "And then, blackness..."
 
-    "Blackness, threaded through with multicolored light..."
+    scene black with fade
+
+    "Blackness, threaded through with multicolored light, and the sound of running water..."
 
     "..."
+
+    scene mountain_720 with fade
+
+    show yeni neutral_scaled at left
+
+    stop music fadeout 2.0
 
     "The next moment I'm aware of myself, I'm lying in the snow, with a splitting pain wracking one side of my head. My arms are empty."
 
@@ -314,6 +396,23 @@ label start:
 
     # expand on the dialog between them
 
+    "I rise unsteadily to my feet. Ari begins to cry in my arms."
+
+    "The past year, all I'd wanted was for my mom to accept me again. For her to tell me she'd been wrong to banish me."
+
+    "Now, I just wish I'd destroyed this cursed, evil disk immediately."
+    
+    "No matter how much my husband begged me on his deathbed to see this fool's errand through."
+
+    "It's only just now that I realize, the object itself is nowhere to be seen."
+
+    y "We'll go down the mountain. But I'm not going back to the village."
+
+    y "Whatever that thing did to Ari, I'm going to find out."
+
+    y "I'm going north. To the city."
+
+    "My mother comes to stand beside me."
 
     u "Let me carry her a little ways. You'll need your strength."
 

@@ -394,6 +394,40 @@ label start:
 
     "I reach immediately to take my daughter."
 
+    y "Hey, you're ok. I'm right here. Your mama's right here."
+
+    "As I'm searching her face, I spot something that wasn't there before."
+
+    "A small scar, with two lines intersecting in the middle, on Ari's left temple."
+
+    "The skin is raised and dark red, but there's no blood. Like it was healed over the course of a day or two."
+
+    "But I know it wasn't there the last time I saw her, which couldn't have been more than a couple minutes ago."
+
+    "I feel a cold dread settle in the pit of my stomach."
+
+    y "What happened?"
+
+    u "You... I don't know. You both... you both disappeared for a moment."
+
+    show yeni angry_scaled at left
+
+    y "Disappeared? What do you mean, disappeared??"
+
+    u "I don't know. That thing that came from the disk, it started getting bigger."
+
+    u "It was like it... swallowed you. You and Ari both."
+
+    "A chill runs down my spine, and I squeeze Ari in my arms. It takes me a moment to find my voice."
+
+    y "How did she get this? This scar. It wasn't there before."
+
+    "My mother doesn't answer, and I feel anger rising in my throat."
+
+    y "You knew about the disk. You agreed to come here even before I asked. Did you know this would happen?"
+
+    u "No! No, I didn't know."
+
     # expand on the dialog between them
 
     "I rise unsteadily to my feet. Ari begins to cry in my arms."

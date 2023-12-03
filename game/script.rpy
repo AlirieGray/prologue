@@ -248,6 +248,10 @@ label start:
 
     "Then she reaches over and picks up Ari, sitting the baby up in front of her. Ari's arms flail about wildly and she graps at her grandmother's hands."
 
+    "My mother makes silly faces until Ari giggles with glee, kicking her tiny feet."
+
+    "I sit back on the cushion and stretch out my legs before the fire."
+
     u ".."
 
     hide yeni 

@@ -287,31 +287,49 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
+    if main_menu:
+        frame: 
+            background "gui/main_menu_nav_bg.png"
+            xpos 750
+            ypos 120
+            xsize 1000
+            ysize 1000
+            vbox:
+                style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+                spacing gui.navigation_spacing
 
-        spacing gui.navigation_spacing
+                textbutton _("Start") action Start()
+                
+                yalign .05
+                xpos .05
 
-        if main_menu:
+                
+                textbutton _("Load") action ShowMenu("load")
 
-            textbutton _("Start") action Start()
-            
-            yalign 0.38
-            xpos 0.61
+                textbutton _("Options") action ShowMenu("preferences")
 
+                textbutton _("About") action ShowMenu("about")
 
-        else:
+                if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                    ## Help isn't necessary or relevant to mobile devices.
+                    textbutton _("Help") action ShowMenu("help")
+
+                if renpy.variant("pc"):
+                    ## The quit button is banned on iOS and unnecessary on Android and
+                    ## Web.
+                    textbutton _("Quit") action Quit(confirm=not main_menu)
+
+    else:
+        vbox:
 
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load") action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Options") action ShowMenu("preferences")
 
         if _in_replay:
 
@@ -344,6 +362,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -389,14 +408,12 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "images/main_menu.png" #TODO resize based on window/screen size
+    # background "gui/main_menu.png" #TODO resize based on window/screen size
 
-style main_menu_vbox:
-    xalign 1.0
-    xoffset -20
+style main_menu_vbox: 
+    xalign 0.5
     xmaximum 800
     yalign 1.0
-    yoffset -20
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
@@ -431,12 +448,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
         hbox:
 
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
-
             frame:
                 style "game_menu_content_frame"
+                xpos 80
+                background "gui/options_menu_bg.png"
 
                 if scroll == "viewport":
 
@@ -471,8 +486,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
-
     textbutton _("Return"):
         style "return_button"
 
@@ -501,7 +514,7 @@ style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
 
-    background "gui/overlay/game_menu.png"
+    # background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 280
@@ -555,7 +568,8 @@ screen about():
         style_prefix "about"
 
         vbox:
-
+            xpos 50
+            ypos 50
             label "[config.name!t]"
             text _("Version [config.version!t]\n")
 
@@ -719,7 +733,8 @@ screen preferences():
     use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
-
+            xpos 50
+            ypos 50
             hbox:
                 box_wrap True
 
@@ -820,8 +835,9 @@ style pref_label:
     top_margin gui.pref_spacing
     bottom_margin 2
 
-style pref_label_text:
+style pref_label_text: ## todo options menu label styles
     yalign 1.0
+    font "gui/fonts/chancery/BLKCHCRY.ttf"
 
 style pref_vbox:
     xsize 225

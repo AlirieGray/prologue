@@ -422,6 +422,8 @@ label start:
 
     u "It was like it... swallowed you. You and Ari both."
 
+    show yeni neutral_scaled at left
+
     "A chill runs down my spine, and I squeeze Ari in my arms. It takes me a moment to find my voice."
 
     y "How did she get this? This scar. It wasn't there before."

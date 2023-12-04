@@ -250,13 +250,15 @@ screen quick_menu():
         hbox:
             style_prefix "quick"
 
-            xalign 0.8
+            xalign 0.72
             yalign 0.98
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Options") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -408,7 +410,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    # background "gui/main_menu.png" #TODO resize based on window/screen size
+    # background "gui/main_menu.png" #TODO: resize based on window/screen size
 
 style main_menu_vbox: 
     xalign 0.5
@@ -486,13 +488,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    textbutton _("Return"):
-        style "return_button"
-
-        action Return()
-
-    label title
-
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
 
@@ -514,8 +509,6 @@ style game_menu_outer_frame:
     bottom_padding 30
     top_padding 120
 
-    # background "gui/overlay/game_menu.png"
-
 style game_menu_navigation_frame:
     xsize 280
     yfill True
@@ -526,7 +519,8 @@ style game_menu_content_frame:
     top_margin 10
 
 style game_menu_viewport:
-    xsize 920
+    xsize 940
+    
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
@@ -563,22 +557,35 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
-
+    use game_menu(_("About")):
         style_prefix "about"
-
-        vbox:
-            xpos 50
+        viewport id "abt":
+            ymaximum 400
+            yfill True
+            xmaximum 850
             ypos 50
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            xpos 50
+            xfill True
+            mousewheel True
+            vbox:
+                xpos 50
+                ypos 50
+                label "[config.name!t]"
+                text _("Version [config.version!t]\n")
 
-            ## gui.about is usually set in options.rpy.
-            if gui.about:
-                text "[gui.about!t]\n"
+                ## gui.about is usually set in options.rpy.
+                if gui.about:
+                    text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+                text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+        vbar value YScrollValue("abt") xpos .75 ypos .1 ymaximum 400
 
+        hbox:
+            ypos .8
+            xpos .05
+            vbox:
+                textbutton _("Return"): #TODO: fix all the return/main menu buttons positioning in the overlay popups
+                    action Return()      
 
 style about_label is gui_label
 style about_label_text is gui_label_text
@@ -624,23 +631,23 @@ screen file_slots(title):
             order_reverse True
 
             ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
+            # button:
+            #     style "page_label"
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+            #     key_events True
+            #     xalign 0.5
+            #     action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+            #     input:
+            #         style "page_label_text"
+            #         value page_name_value
 
             ## The grid of file slots.
             grid gui.file_slot_cols gui.file_slot_rows:
                 style_prefix "slot"
 
-                xalign 0.5
-                yalign 0.5
+                xalign 0.15
+                yalign 0.2
 
                 spacing gui.slot_spacing
 
@@ -663,28 +670,40 @@ screen file_slots(title):
 
                         key "save_delete" action FileDelete(slot)
 
-            ## Buttons to access other pages.
             hbox:
-                style_prefix "page"
+                ypos .8
+                xpos .05
+                vbox:
+                    textbutton _("Return"):
+                        action Return()       
+                if not main_menu:
+                    vbox:
+                        textbutton _("Main Menu"):
+                            xpos .15
+                            action MainMenu() 
 
-                xalign 0.5
-                yalign 1.0
+            ## Buttons to access other pages.
+            # hbox:
+            #     style_prefix "page"
 
-                spacing gui.page_spacing
+            #     xalign 0.5
+            #     yalign 1.0
 
-                textbutton _("<") action FilePagePrevious()
+            #     spacing gui.page_spacing
 
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
+            #     textbutton _("<") action FilePagePrevious()
 
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
+            #     if config.has_autosave:
+            #         textbutton _("{#auto_page}A") action FilePage("auto")
 
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
+            #     if config.has_quicksave:
+            #         textbutton _("{#quick_page}Q") action FilePage("quick")
 
-                textbutton _(">") action FilePageNext()
+            #     ## range(1, 10) gives the numbers from 1 to 9.
+            #     for page in range(1, 10):
+            #         textbutton "[page]" action FilePage(page)
+
+            #     textbutton _(">") action FilePageNext()
 
 
 style page_label is gui_label
@@ -731,7 +750,6 @@ screen preferences():
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
-
         vbox:
             xpos 50
             ypos 50
@@ -804,6 +822,19 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
+            hbox:
+                vbox:
+                    textbutton _("Return"):
+                        ypos .9
+                        action Return()       
+                
+                if not main_menu:
+                    vbox:
+                        textbutton _("Main Menu"):
+                            ypos .9
+                            xpos .3
+                            action MainMenu() 
+
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -835,7 +866,7 @@ style pref_label:
     top_margin gui.pref_spacing
     bottom_margin 2
 
-style pref_label_text: ## todo options menu label styles
+style pref_label_text: ## TODO: options menu label styles
     yalign 1.0
     font "gui/fonts/chancery/BLKCHCRY.ttf"
 
@@ -892,35 +923,50 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(_("")):
+        pass
 
-        style_prefix "history"
+        vpgrid:
+            style_prefix "history"
+            cols 1 
+            yinitial 1.0
 
-        for h in _history_list:
+            scrollbars "vertical"
+            mousewheel True
+            side_ysize 400
+            side_xsize 900
+            side_xpos 10
+            side_ypos 50
 
-            window:
+            for h in _history_list:
 
-                ## This lays things out properly if history_height is None.
-                has fixed:
-                    yfit True
+                window:
+                    ## This lays things out properly if history_height is None.
+                    has fixed:
+                        yfit True
 
-                if h.who:
+                    if h.who:
 
-                    label h.who:
-                        style "history_name"
+                        label h.who:
+                            style "history_name"
+                            substitute False
+
+                            ## Take the color of the who text from the Character, if
+                            ## set.
+                            if "color" in h.who_args:
+                                text_color h.who_args["color"]
+
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    text what:
                         substitute False
 
-                        ## Take the color of the who text from the Character, if
-                        ## set.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+            if not _history_list:
+                label _("The dialogue history is empty.")
+            
+            textbutton _("Return"):
+                style "return_button"
 
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
-
-        if not _history_list:
-            label _("The dialogue history is empty.")
+                action Return()   
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1002,6 +1048,13 @@ screen help():
                 use mouse_help
             elif device == "gamepad":
                 use gamepad_help
+
+        hbox:
+            ypos .8
+            xpos .05
+            vbox:
+                textbutton _("Return"):
+                    action Return()      
 
 
 screen keyboard_help():

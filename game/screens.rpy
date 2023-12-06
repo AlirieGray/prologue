@@ -133,10 +133,10 @@ style namebox_label is say_label
 style window:
     xalign 0.5
     xfill True
-    yalign gui.textbox_yalign
+    yalign .9
     ysize gui.textbox_height
 
-    background Image("gui/testGroup.png", xalign=0.5, yalign=1.0)
+    background Image("gui/dialog_frame_borders.png", xalign=0.5, yalign=1) 
 
 style namebox:
     xpos gui.name_xpos
@@ -251,7 +251,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.72
-            yalign 0.98
+            yalign 0.95
 
             textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
@@ -291,36 +291,60 @@ screen navigation():
 
     if main_menu:
         frame: 
-            background "gui/main_menu_nav_bg.png"
-            xpos 750
-            ypos 120
-            xsize 1000
+            background "gui/empty_hack.png"
+            xpos 200
+            ypos 600
+            xsize 1200
             ysize 1000
-            vbox:
-                style_prefix "navigation"
+            
+            hbox:
+                # style_prefix "navigation"
 
                 spacing gui.navigation_spacing
-
-                textbutton _("Start") action Start()
-                
                 yalign .05
                 xpos .05
 
-                
-                textbutton _("Load") action ShowMenu("load")
+                # TODO: refactor styles for redundancy
+                button:
+                    action Start() 
+                    has vbox
+                    add im.Scale("gui/button/nav_button_bg.png", 95, 40) 
+                    text "Start" color "#dddddd"  ypos -30 xpos 20
+            
+                button: 
+                    action ShowMenu("load") 
+                    has vbox
+                    add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
+                    text "Load" color "#dddddd" ypos -30 xpos 20
 
-                textbutton _("Options") action ShowMenu("preferences")
+                button: 
+                    action ShowMenu("preferences") 
+                    has vbox
+                    add im.Scale("gui/button/nav_button_bg.png", 110, 40)  
+                    text "Options" color "#dddddd"  ypos -30 xpos 15
 
-                textbutton _("About") action ShowMenu("about")
+                button:
+                    action ShowMenu("about") 
+                    has vbox
+                    add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
+                    text "About" color "#dddddd"  ypos -30 xpos 20
 
                 if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
                     ## Help isn't necessary or relevant to mobile devices.
-                    textbutton _("Help") action ShowMenu("help")
+                    button:
+                        action ShowMenu("help")  
+                        has vbox
+                        add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
+                        text "Help" color "#dddddd"  ypos -30 xpos 20
 
                 if renpy.variant("pc"):
                     ## The quit button is banned on iOS and unnecessary on Android and
                     ## Web.
-                    textbutton _("Quit") action Quit(confirm=not main_menu)
+                    button:
+                        action Quit(confirm=not main_menu) 
+                        has vbox
+                        add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
+                        text "Quit" color "#dddddd"  ypos -30 xpos 20
 
     else:
         vbox:
@@ -389,15 +413,22 @@ screen main_menu():
     use navigation
 
     # if gui.show_name:
-
     #     vbox:
     #         style "main_menu_vbox"
+    #         ypos 1.02
+    #         xpos 
+    #         add "gui/GameTitle_1.png"
 
-    #         text "[config.name!t]":
-    #             style "main_menu_title"
+            # hbox:
+            #     ypos 20
+            #     # text "[config.name!t]":
+            #     #     style "main_menu_title"
 
-    #         text "[config.version]":
-    #             style "main_menu_version"
+            # hbox:
+            #     xpos 730
+            #     text "Twice as Bright Games":
+            #         style "main_menu_version" #TODO: game studio style
+
 
 
 style main_menu_frame is empty
@@ -453,7 +484,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
             frame:
                 style "game_menu_content_frame"
                 xpos 80
-                background "gui/options_menu_bg.png"
+                background "gui/big_box.png"
 
                 if scroll == "viewport":
 
@@ -560,11 +591,11 @@ screen about():
     use game_menu(_("About")):
         style_prefix "about"
         viewport id "abt":
-            ymaximum 400
-            yfill True
-            xmaximum 850
             ypos 50
             xpos 50
+            ymaximum 400
+            xmaximum 850
+            yfill True
             xfill True
             mousewheel True
             vbox:
@@ -1518,7 +1549,7 @@ style main_menu_frame:
 
 style game_menu_outer_frame:
     variant "small"
-    background "gui/phone/overlay/game_menu.png"
+    background "gui/phone/overlay/.png"
 
 style game_menu_navigation_frame:
     variant "small"

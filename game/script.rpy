@@ -10,7 +10,7 @@ image yeni scared_scaled = im.Scale("yeni_scared.png", 500, 700)
 label start:
     # Part One: The Village
 
-    scene village_720 # TODO: change image based on screen size/resolution
+    scene village_720 with fade  # TODO: change image based on screen size/resolution
 
     play music bell_fade 
 

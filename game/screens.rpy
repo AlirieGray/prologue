@@ -301,50 +301,58 @@ screen navigation():
                 # style_prefix "navigation"
 
                 spacing gui.navigation_spacing
-                yalign .05
+                yalign .02
                 xpos .05
 
                 # TODO: refactor styles for redundancy
                 button:
                     action Start() 
+                    idle_background im.Scale("gui/button/nav_button_bg.png", 90, 46) 
+                    hover_background im.Scale("gui/button/nav_button_bg_hover.png", 90, 46)  
                     has vbox
-                    add im.Scale("gui/button/nav_button_bg.png", 95, 40) 
-                    text "Start" color "#dddddd"  ypos -30 xpos 20
+                    text "Start" color "#f7e5ff"  ypos 9 xpos 15 font "gui/fonts/imperator/ImperatorSmallCaps.ttf"
             
                 button: 
                     action ShowMenu("load") 
+                    idle_background im.Scale("gui/button/nav_button_bg.png", 95, 46)  
+                    hover_background im.Scale("gui/button/nav_button_bg_hover.png", 95, 46)  
                     has vbox
-                    add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
-                    text "Load" color "#dddddd" ypos -30 xpos 20
+                    text "Load" color "#f7e5ff" ypos 9 xpos 18 font "gui/fonts/imperator/ImperatorSmallCaps.ttf"
 
                 button: 
                     action ShowMenu("preferences") 
+                    idle_background im.Scale("gui/button/nav_button_bg.png", 120, 46)  
+                    hover_background im.Scale("gui/button/nav_button_bg_hover.png", 120, 46)  
                     has vbox
-                    add im.Scale("gui/button/nav_button_bg.png", 110, 40)  
-                    text "Options" color "#dddddd"  ypos -30 xpos 15
+                    text "Options" color "#f7e5ff"  ypos 9 xpos 16 font "gui/fonts/imperator/ImperatorSmallCaps.ttf"
 
                 button:
                     action ShowMenu("about") 
+                    idle_background im.Scale("gui/button/nav_button_bg.png", 106, 46)  
+                    hover_background im.Scale("gui/button/nav_button_bg_hover.png", 106, 46)  
                     has vbox
-                    add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
-                    text "About" color "#dddddd"  ypos -30 xpos 20
+                    text "About" color "#f7e5ff"  ypos 9 xpos 16 font "gui/fonts/imperator/ImperatorSmallCaps.ttf"
 
                 if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
                     ## Help isn't necessary or relevant to mobile devices.
                     button:
+                        xpos 5
                         action ShowMenu("help")  
+                        idle_background im.Scale("gui/button/nav_button_bg.png", 85, 46)  
+                        hover_background im.Scale("gui/button/nav_button_bg_hover.png", 85, 46)  
                         has vbox
-                        add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
-                        text "Help" color "#dddddd"  ypos -30 xpos 20
+                        text "Help" color "#f7e5ff"  ypos 9 xpos 16 font "gui/fonts/imperator/ImperatorSmallCaps.ttf"
 
                 if renpy.variant("pc"):
                     ## The quit button is banned on iOS and unnecessary on Android and
                     ## Web.
                     button:
+                        xpos 15
                         action Quit(confirm=not main_menu) 
+                        idle_background im.Scale("gui/button/nav_button_bg.png", 85, 46)  
+                        hover_background im.Scale("gui/button/nav_button_bg_hover.png", 85, 46)  
                         has vbox
-                        add im.Scale("gui/button/nav_button_bg.png", 95, 40)  
-                        text "Quit" color "#dddddd"  ypos -30 xpos 20
+                        text "Quit" color "#f7e5ff"  ypos 9 xpos 15 font "gui/fonts/imperator/ImperatorSmallCaps.ttf"
 
     else:
         vbox:
@@ -1009,9 +1017,7 @@ style history_window is empty
 
 style history_name is gui_label
 style history_name_text is gui_label_text
-style history_text is gui_text
-
-style history_text is gui_text
+style history_text is default
 
 style history_label is gui_label
 style history_label_text is gui_label_text

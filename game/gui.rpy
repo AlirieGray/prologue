@@ -26,7 +26,7 @@ init python:
 define gui.accent_color = u'#0099cc'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = u'#ffffff'
+define gui.idle_color = u'#e814ff'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -49,28 +49,30 @@ define gui.hover_muted_color = u'#005b7a'
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = u'#ffffff'
-define gui.interface_text_color = u'#ffffff'
+define gui.interface_text_color = u'#e814ff'
+
+# TODO: fix text and GUI colors
 
 
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "gui/fonts/sugarcubes/SugarcubesRegular.ttf"
+define gui.text_font = "gui/fonts/imperator/Imperator.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "gui/fonts/sugarcubes/SugarcubesRegular.ttf"
+define gui.name_text_font = "gui/fonts/chancery/BLKCHCRY.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "gui/fonts/sugarcubes/SugarcubesRegular.ttf"
+define gui.interface_text_font = "gui/fonts/imperator/ImperatorSmallCaps.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 22
+define gui.text_size = 20
 
 ## The size of character names.
 define gui.name_text_size = 30
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 22
+define gui.interface_text_size = 20
 
 ## The size of labels in the game's user interface.
 define gui.label_text_size = 24
@@ -79,13 +81,15 @@ define gui.label_text_size = 24
 define gui.notify_text_size = 16
 
 ## The size of the game's title.
-define gui.title_text_size = 50
+define gui.title_text_size = 90
+
+define gui.title_text_font = "gui/fonts/centurion/Centurion.ttf"
 
 
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "gui/main_menu-01.png" #TODO: use image and separate text objects for main menu
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -104,8 +108,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 240
-define gui.name_ypos = -15
+define gui.name_xpos = 215
+define gui.name_ypos = 22
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -128,11 +132,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 268
-define gui.dialogue_ypos = 40
+define gui.dialogue_xpos = 228
+define gui.dialogue_ypos = 70
 
-## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 744
+## The maximum width of dialoIIgue text, in pixels.
+define gui.dialogue_width = 790
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -246,7 +250,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 120
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 10
@@ -258,7 +262,7 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 18
+define gui.navigation_spacing = 50
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 10

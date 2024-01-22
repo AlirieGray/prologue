@@ -30,9 +30,9 @@ define config.version = "1.0 beta"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-Prologue is a production of Twice as Bright Studio, Copyright 2023.
+Prologue is a production of Twice as Bright Games, Copyright 2024.
 
-Stay tuned for our upcomign work at (website URL)
+Stay tuned for our upcoming work at {a=https://www.twiceasbright.games/}TwiceAsBright.Games{/a}
 
 Alirie Gray:Programmer, Writer, Producer
 

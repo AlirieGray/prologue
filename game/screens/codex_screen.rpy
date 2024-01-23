@@ -1,12 +1,5 @@
 
 init python:
-    current_codex_topic = "Religion"
-    current_codex_entry = "Revelation on the Mysterious Beings"
-
-    def set_current_topic(topic):
-        current_codex_topic = topic
-
-
     codex_dict = {
         "History": {
             "The Prophet's Daughter": {
@@ -69,6 +62,25 @@ init python:
     }
 
 
+    class CodexLibrary:
+        def __init__(self):
+            self.current_topic = "Religion"
+            self.available_entries = ["Revelation on the Mysterious Beings", "Revelation on Magic", "Revelation on War"]
+            self.current_entry = "Revelation on the Mysterious Beings"
+            self.current_entry_text = codex_dict[self.current_topic][self.current_entry]["text"]
+
+        def set_current_topic(self, topic):
+            self.current_topic = topic
+            self.current_entry = ""
+            self.current_entry_text = ""
+            self.available_entries = codex_dict[topic].keys()
+
+        def set_current_entry(self, entry): 
+            self.current_entry = entry
+            self.current_entry_text = codex_dict[self.current_topic][self.current_entry]["text"]
+
+    my_codex = CodexLibrary()
+
 
 
 # Codex Screen
@@ -87,13 +99,13 @@ screen codex():
                 ypos .1
                 spacing 10
                 for topic in codex_dict.keys():
-                    textbutton topic action Function(set_current_topic, topic)
+                    textbutton topic action Function(my_codex.set_current_topic, topic)
             vbox:
                 ypos .1
                 xpos .15
                 spacing 10
-                for entry in codex_dict[current_codex_topic].keys():
-                    text entry
+                for entry in my_codex.available_entries:
+                    textbutton entry action Function(my_codex.set_current_entry, entry)
             vbox:
                 ypos .1
                 xpos .15
@@ -109,6 +121,6 @@ screen codex():
                     # has vbox
                     vbox:
                         ymaximum 900
-                        if current_codex_entry in codex_dict[current_codex_topic]:
-                            text current_codex_entry
-                            text codex_dict[current_codex_topic][current_codex_entry]["text"]
+                        text my_codex.current_entry
+                        text my_codex.current_entry_text
+                        

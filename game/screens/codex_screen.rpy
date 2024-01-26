@@ -1,5 +1,6 @@
 
 init python:
+    from functools import cmp_to_key
     codex_dict = {
         "History": {
             "The Prophet's Daughter": {
@@ -10,41 +11,19 @@ init python:
         "Religion": {
             "Revelation on the Mysterious Beings": {
                 "text": """Indeed, on the mountaintop a Gate was opened.\nAnd from the Gate there came a pure ringing, as if from great bells,\nAnd from beyond the Gate I was beckoned, as if by outstretched hands.\nAnd so I crossed, as if pulled by a string of light.\nIs this not a clear sign, for those of you who see?\n\nWhereupon I met with three of the Blue Ones,\nWho bid me to stay and drink from the healing water.\nAnd the water ran hot like the sun that burns away the mist,\nAnd washed away those wounds left by treachery and deceit.\nIs this not a clear sign, for those of you who see?\n\nWhereupon I was shown the wonders, which were blinding to the eye.\nAnd these wonders were that of knowledge and long life.\nIs that which is given to humanity also given to the Blue Ones,\nAnd that which is given to the Blue Ones also given to humanity?\nThey asked, did I not love the people who sent me?\nSurely this is a clear sign, for those of you who understand.""",
-                "revealed": False
+                "revealed": True
             },
             "Revelation on Magic": {
-                "text": """Indeed, I was sent to return with a clear message, if only you knew,\nThat my people might all be amongst those who see.\nFor the children until 
-                they learn to ride, remind them of the Realm of Wonders,\nAnd the Blue Ones who reside there.\nFor the children who have learned to ride,\nThen teach them 
-                to focus their thoughts, like milk that runs through a sieve,\nUntil they too can see.\nAnd when they can see, then teach them to carry lightning,\nAs I have 
-                shown you.\nAnd when your sons and daughters have married, \nThen it is given to them to refrain from the excess of power.\nFor surely there is great danger, 
-                if you only knew.\n\n\nThe one who submits to the seduction of excess,\nIs more lowly than even those creatures which slither on the ground.\nSo refrain from 
-                drunkenness and do not display your wealth,\nAnd do not boast with the lightning in your hands.\n\n\nAnd from amongst you, there must be one who can open the 
-                Gate,\nAnd to her alone I will impart the secret,\nFor surely the Blue Ones know that which you do not.\nAnd have you not seen the wonders that they have 
-                sent me with?\nSurely the falcon cannot write.""",
+                "text": """Indeed, I was sent to return with a clear message, if only you knew,\nThat my people might all be amongst those who see.\nFor the children until they learn to ride, remind them of the Realm of Wonders,\nAnd the Blue Ones who reside there.\nFor the children who have learned to ride,\nThen teach them to focus their thoughts, like milk that runs through a sieve,\nUntil they too can see.\nAnd when they can see, then teach them to carry lightning,\nAs I have shown you.\nAnd when your sons and daughters have married, \nThen it is given to them to refrain from the excess of power.\nFor surely there is great danger, if you only knew.\n\n\nThe one who submits to the seduction of excess,\nIs more lowly than even those creatures which slither on the ground.\nSo refrain from drunkenness and do not display your wealth,\nAnd do not boast with the lightning in your hands.\n\n\nAnd from amongst you, there must be one who can open the Gate,\nAnd to her alone I will impart the secret,\nFor surely the Blue Ones know that which you do not.\nAnd have you not seen the wonders that they have sent me with?\nSurely the falcon cannot write.""",
                 "revealed": False
             },
             "Revelation on War": {
-                "text": """On the tenth day of the winteryear, it is given that the land will be united
-                \nFrom the Sacred Peak to the Northern Sea.
-                \nAnd this land will be divided fairly amongst you,
-                \nThat you might build halls of learning and wonders.
-                \nIt is given that you should teach the children of distant lands as you do your own,
-                \nThat they might also be of those who are united.
-                \nSurely this is a revelation, for those of you who understand.\n
-                \nIt is given that those of you strong of body and will
-                \nShould draw your bows, both the women and the men.
-                \nThat the land, already fractured and wounded,
-                \nMight be healed as if in the marriage of two clans. 
-                \nSurely this is a revelation, for those of you who understand.\n
-                \nAnd take not prisoners of war, except that you grant them full rights in your clan.
-                \nAnd dishonor not the women nor the men, for indeed this is a grave wrong.
-                \nAnd spill not needless blood, for indeed amongst our enemies are those who see.
-                \nSurely this is a commandment, for those of you who understand.""",
+                "text": """On the tenth day of the winteryear, it is given that the land will be united\nFrom the Sacred Peak to the Northern Sea.\nAnd this land will be divided fairly amongst you,\nThat you might build halls of learning and wonders.\nIt is given that you should teach the children of distant lands as you do your own,\nThat they might also be of those who are united.\nSurely this is a revelation, for those of you who understand.\n\nIt is given that those of you strong of body and will\nShould draw your bows, both the women and the men.\nThat the land, already fractured and wounded,\nMight be healed as if in the marriage of two clans. \nSurely this is a revelation, for those of you who understand.\n\nAnd take not prisoners of war, except that you grant them full rights in your clan.\nAnd dishonor not the women nor the men, for indeed this is a grave wrong.\nAnd spill not needless blood, for indeed amongst our enemies are those who see.\nSurely this is a commandment, for those of you who understand.""",
                 "revealed": False
             }
         },
         "People": {
-            "...": {
+            "Tzeh tl'Un": {
                 "text": "....",
                 "revealed": False
             }
@@ -61,6 +40,25 @@ init python:
         }
     }
 
+    def sort_key(entry1, entry2):
+        topics = codex_dict.keys()
+        current_topic = topics[0]
+        for topic in topics:
+            if entry1 in codex_dict[topic]:
+                current_topic = topic
+                break
+
+        current_codex_topic = codex_dict[current_topic]
+        if current_codex_topic[entry1]["revealed"] and not current_codex_topic[entry2]["revealed"]:
+            return -1
+        if not current_codex_topic[entry1]["revealed"] and current_codex_topic[entry2]["revealed"]:
+            return 1
+        if current_codex_topic[entry1]["revealed"] and current_codex_topic[entry2]["revealed"]:
+            return 0
+        if not current_codex_topic[entry1]["revealed"] and not current_codex_topic[entry2]["revealed"]:
+            return 0
+        return 0
+
 
     class CodexLibrary:
         def __init__(self):
@@ -69,15 +67,23 @@ init python:
             self.current_entry = "Revelation on the Mysterious Beings"
             self.current_entry_text = codex_dict[self.current_topic][self.current_entry]["text"]
 
+        def sort_entries_by_revealed(self, entries):
+            return sorted(entries, key=cmp_to_key(sort_key))
+
         def set_current_topic(self, topic):
             self.current_topic = topic
             self.current_entry = ""
             self.current_entry_text = ""
-            self.available_entries = codex_dict[topic].keys()
+            self.available_entries = self.sort_entries_by_revealed(codex_dict[topic].keys())
 
         def set_current_entry(self, entry): 
             self.current_entry = entry
             self.current_entry_text = codex_dict[self.current_topic][self.current_entry]["text"]
+
+        def is_revealed(self, entry):
+            if codex_dict[self.current_topic][entry]["revealed"]:
+                return True
+            return False
 
     my_codex = CodexLibrary()
 
@@ -89,38 +95,47 @@ screen codex():
     predict False
 
     frame: 
-        xmaximum 1600
-        ymaximum 900
+        xmaximum 1500
+        xminimum 1200
+        yminimum 650
+        ymaximum 1200
+        # xfill True
         xalign .5
         yalign .5
         hbox:
+            yoffset 15
+            xoffset 15
+            spacing 25
             vbox: 
-                xpos .2
-                ypos .1
                 spacing 10
                 for topic in codex_dict.keys():
                     textbutton topic action Function(my_codex.set_current_topic, topic)
             vbox:
-                ypos .1
-                xpos .15
                 spacing 10
+                xminimum 388
                 for entry in my_codex.available_entries:
-                    textbutton entry action Function(my_codex.set_current_entry, entry)
+                    if my_codex.is_revealed(entry):
+                        textbutton entry action Function(my_codex.set_current_entry, entry)
+                    else:
+                        text "Not Discovered Yet" color "bbbbbb" xoffset 5
             vbox:
-                ypos .1
-                xpos .15
                 ymaximum 900
-                xmaximum 900
+                xmaximum 800
+                # xoffset 10
+                xanchor 1.0
+                xpos 620
+                spacing 10
+                text my_codex.current_entry
                 viewport:
                     scrollbars "vertical"
                     mousewheel True
-                    side_ysize 500
-                    side_xsize 800
-                    side_xpos 10
+                    area (0, 0, 600, 550)
+                    # side_ysize 500
+                    # side_xsize 800
+                    # side_xpos 10
                     # side_ypos 10
                     # has vbox
                     vbox:
-                        ymaximum 900
-                        text my_codex.current_entry
+                        xmaximum 550
                         text my_codex.current_entry_text
                         

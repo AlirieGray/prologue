@@ -13,7 +13,7 @@ screen preferences():
 
     use game_menu(_("Preferences"), scroll="viewport"):
         vbox:
-            xpos 50
+            xpos 80
             ypos 50
             hbox:
                 box_wrap True
@@ -85,17 +85,17 @@ screen preferences():
                             style "mute_all_button"
 
             hbox:
-                vbox:
-                    textbutton _("Return"):
-                        ypos .9
-                        action Return()       
-                
+                xpos 650
+                ypos 90
+
                 if not main_menu:
-                    vbox:
-                        textbutton _("Main Menu"):
-                            ypos .9
-                            xpos .3
-                            action MainMenu() 
+                    textbutton _("Main Menu"):
+                        action MainMenu() 
+
+                textbutton _("Return"):
+                    xpos 20
+                    action Return()       
+                
 
 
 style pref_label is gui_label

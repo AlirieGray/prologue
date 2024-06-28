@@ -24,10 +24,10 @@ screen history():
 
             scrollbars "vertical"
             mousewheel True
-            side_ysize 400
-            side_xsize 900
-            side_xpos 10
-            side_ypos 50
+            side_ysize 450
+            side_xsize 870
+            side_xpos 45
+            side_ypos 45
 
             for h in _history_list:
 
@@ -54,10 +54,12 @@ screen history():
             if not _history_list:
                 label _("The dialogue history is empty.")
             
-            textbutton _("Return"):
-                style "return_button"
+        textbutton _("Return"):
+            style "return_button"
+            xpos 800 
+            ypos 560
 
-                action Return()   
+            action Return()   
 
 
 ## This determines what tags are allowed to be displayed on the history screen.

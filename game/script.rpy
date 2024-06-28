@@ -116,7 +116,7 @@ label start:
 
     "As if for her, that was the worst thing to come out of not seeing her daughter for a whole year. As if I had any say in the matter."
 
-    "As if my mother might have chosen differently, might have regretted her decision to cast me out…"
+    "As if my mother might have chosen differently, might have regretted her decision to cast me out..."
 
     "But only because of this. Only because of the inconvenience."
 
@@ -126,7 +126,7 @@ label start:
 
     u "Now, you didn't come here on a pigeon's trip. Are you going to tell me why you're here?"
 
-    y "It's… Well, it's better if I tell you after we eat."
+    y "It's... Well, it's better if I tell you after we eat."
 
     "I'm obviously already on icy ground with her. I don't want to also bring bad luck by sharing the news I have over a meal."
 
@@ -164,7 +164,7 @@ label start:
 
     "It takes me a moment to steady my voice before I can continue. Ari wakes and starts fussing and I rock her back and forth in the sling."
 
-    y "He said his family had passed it down, waiting for the right time to use it for… something. He said he knew the time had come, but he was too sick to make the journey by then."
+    y "He said his family had passed it down, waiting for the right time to use it for... something. He said he knew the time had come, but he was too sick to make the journey by then."
 
     y "That was his last request of me. That I finish what his ancestors started."
 
@@ -196,7 +196,7 @@ label start:
 
     u "You came to ask me if I'll go to the mountaintop with you. To see this through."
 
-    y "I… Yes."
+    y "I... Yes."
 
     u "Alright, then. We'll leave at dawn."
 
@@ -211,8 +211,6 @@ label start:
     # Part Two: The Camp
 
     scene black with fade 
-
-    "..."
 
     stop music fadeout 2.0
 
@@ -268,20 +266,22 @@ label start:
 
     "I don't know what it is, but as we've gotten closer to the mountain, little by little this uneasy feeling grows in the pit of my stomach."
 
-    "Not even just the nervous anticipation of the unknown ritual we're about to face, or the trepidation of bringing Arizet to such a dangerous enviornment." 
+    "Not even just the nervous anticipation of the unknown ritual we're about to conduct, or the trepidation of bringing Arizet to such a dangerous enviornment." 
     # TODO play eerie ringing sound 
     
     "But a low, steady humming that reverberates through my body. I feel like I can't quite sit still, I can't quite get comfortable enough to sleep." 
     
     "Pins and needles in my fingers, and a headache that won't go away." 
+
+    play music foreboding fadein 2.0 loop
     
     "As I finally drift off to sleep, the images that play in my mind are... unsettling."
+
     
     "{i}The pins and needles bloom into a fiery crackle of lightning that shot through my hands, burning the ground, burning the air around me.{/i}" 
     
     "{i}And the smell, intimately familiar and awful. Blood and smoke, the smell of death.{/i}"
 
-    play music foreboding fadein 2.0 loop
 
     # dream transition
 
@@ -363,7 +363,7 @@ label start:
     
     c "{i}Kind of a risk, don’t you think? Bringing this into battle. What if it fell into enemy hands?{/i}"
 
-    "{i}Cheinan lifted the disk from the satchel I had attached to my belt, and it disappearing in the folds of her own coat.{/i}"
+    "{i}Cheinan lifted the disk from the satchel I had attached to my belt, and it disappeared in the folds of her own coat.{/i}"
     
     t "{i}No one could have... Could have...{/i}"
     
@@ -381,9 +381,9 @@ label start:
     
     "{i}Because I never could have fought her. Not even for my own life.{/i}" 
     
-    "{i}Through my confusion and fading vision I hear the distant sounds of battle.{/i}"
+    "{i}Through my confusion and fading vision I heard the distant sounds of battle.{/i}"
     
-    "{i}My men... what's going to happen to them… Without the relic to aid them, Vhiranzesh's forces will...{/i}"
+    "{i}My men... what would happen to them... Without the relic to aid them, Vhiranzesh's forces would...{/i}"
     
     "{i}Why would she...{/i}"
     

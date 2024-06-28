@@ -41,7 +41,7 @@ init python:
     }
 
     def sort_key(entry1, entry2):
-        topics = codex_dict.keys()
+        topics = list(codex_dict.keys())
         current_topic = topics[0]
         for topic in topics:
             if entry1 in codex_dict[topic]:
@@ -117,11 +117,10 @@ screen codex():
                     if my_codex.is_revealed(entry):
                         textbutton entry action Function(my_codex.set_current_entry, entry)
                     else:
-                        text "Not Discovered Yet" color "bbbbbb" xoffset 5
+                        text "Not Discovered Yet" color "bbbbbb" xoffset 5 yoffset 5
             vbox:
                 ymaximum 900
                 xmaximum 800
-                # xoffset 10
                 xanchor 1.0
                 xpos 620
                 spacing 10
@@ -130,11 +129,6 @@ screen codex():
                     scrollbars "vertical"
                     mousewheel True
                     area (0, 0, 600, 550)
-                    # side_ysize 500
-                    # side_xsize 800
-                    # side_xpos 10
-                    # side_ypos 10
-                    # has vbox
                     vbox:
                         xmaximum 550
                         text my_codex.current_entry_text

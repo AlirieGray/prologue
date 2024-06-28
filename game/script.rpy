@@ -2,10 +2,12 @@ define y = Character("Yeni", color="#0390fc")
 define u = Character("Urta", color="#fc8803")
 define w = Character("??", color="#fc8803")
 define m = Character("??", color="#6f03fc")
+define t = Character("Tzeh", color="#8f0013")
+define c = Character("Cheinan", color="#007519")
  
-image yeni neutral_scaled = im.Scale("yeni_neutral.png", 500, 700)
-image yeni angry_scaled = im.Scale("yeni_angry.png", 500, 700)
-image yeni scared_scaled = im.Scale("yeni_scared.png", 500, 700)
+image yeni neutral = "Yeni_Neutral.png"
+image yeni angry = "Yeni_Angry.png"
+image yeni scared = "Yeni_Scared.png"
 
 label start:
     # Part One: The Village
@@ -16,7 +18,7 @@ label start:
 
     queue music no_bell_fade loop
 
-    show yeni neutral_scaled at left
+    show yeni neutral at left
 
     "There's still enough light by the setting sun and the rise of the moons to find my way to the house."
 
@@ -156,7 +158,7 @@ label start:
 
     u "From you husband? When? How did he find this?"
 
-    y "Last week, before he…"
+    y "Last week, before he..."
 
     y "...before he died."
 
@@ -216,7 +218,7 @@ label start:
 
     scene camp_720 with fade
 
-    show yeni neutral_scaled at left
+    show yeni neutral at left
 
     play sound night_crickets loop
 
@@ -264,27 +266,140 @@ label start:
 
     scene black with fade 
 
-    "It's hard to fall asleep, my mind is swimming with doubt and fear."
+    "I don't know what it is, but as we've gotten closer to the mountain, little by little this uneasy feeling grows in the pit of my stomach."
+
+    "Not even just the nervous anticipation of the unknown ritual we're about to face, or the trepidation of bringing Arizet to such a dangerous enviornment." 
+    # TODO play eerie ringing sound 
+    
+    "But a low, steady humming that reverberates through my body. I feel like I can't quite sit still, I can't quite get comfortable enough to sleep." 
+    
+    "Pins and needles in my fingers, and a headache that won't go away." 
+    
+    "As I finally drift off to sleep, the images that play in my mind are... unsettling."
+    
+    "{i}The pins and needles bloom into a fiery crackle of lightning that shot through my hands, burning the ground, burning the air around me.{/i}" 
+    
+    "{i}And the smell, intimately familiar and awful. Blood and smoke, the smell of death.{/i}"
 
     play music foreboding fadein 2.0 loop
 
     # dream transition
 
-    "...."
-
     scene battle_720 with fade
 
-    "{i}The smell of blood, smoke in my eyes.{/i}"
+    "{i}My men were fighting bravely, but I felt the battle turning against us. We were losing ground, losing men too fast.{/i}"
 
+    "{i}I shot lightning enough to light the steppe like a thunderstorm. I felled soldier after soldier. It wasn't enough.{/i}"
 
-    "{i}....{/i}"
+    "{i}I reached for the relic in the bag at my hip, pulling from it to restore my energy.{/i}"
+
+    "{i}We would not lose this battle. I led us here and through all the battles before. It would not be the Traitor King and his army of cowards that ended my reign. Not when I still had so much to accomplish.{/i}"
+
+    c "{i}General!"
+    
+    "{i}I whipped my head around at the sound of Cheinan's voice, clear even over the din of battle, and saw her riding towards me.{/i}"
+    
+    c "{i}It's Vhiranzesh!{/i}"
+    
+    t "{i}What?? He’s here?{/i}"
+    
+    "{i}The Traitor King hasn't been in the grass of any of his battles since consolidating his power, I never thought I'd have a chance at killing him short of sacking the capital.{/i}" 
+    
+    c"{i}He’s on the riverbank, trying to escape. Tzeh, you have to catch him!{/i}"
+
+    "{i}Without even waiting for a response, Cheinan was gallopping through the battlefield, knowing I would follow her.{/i}" 
+    
+    "{i}Distantly, I was aware of my second-in-command shouting for me to wait, to bring backup, but I could hardly hear him. I could hardly even hear battle anymore, the cries, the bellow of horses.{/i}" 
+    
+    "{i}I heard only the rush of blood in my ears, and the last words he said to me on that night, echoing...{/i}"
+
+    "{i}\"...would be beneath me to kill you.\"{/i}"
+
+    "{i}Cheinan tore through the battle, like a bird of prey.{/i}" 
+
+    "{i}She always was the fastest rider of all of us. I always said I’d beat her in a race one day, but I never got the chance.{/i}" 
+
+    "{i}Though I never minded. I preferred it that way.{/i}" 
+
+    c "{i}Tzeh, catch up! Come on! If he crosses the river, we’ve lost him!{/i}"
+
+    "{i}The route she led me on passed the line of battle into enemy territory, and she didn’t slow down for a moment.{/i}" 
+
+    "{i}I didn’t either, urging my horse forward over every obstacle.{/i}"
+
+    t "{i}Cheinan! We’re going north! The river is east.{/i}"
+
+    c "{i}He won’t cross this far south, it’s too wide and the current too strong. We’ll catch him at the crossing point, it’s faster this way.{/i}"
+
+    "{i}As we continued north, the river looped around to meet us, and my revenge drew closer. My justice.{/i}" 
+
+    "{i}I nocked an arrow, feeling the lightning course through my hands and through the bowstring, through the arrow. I pictured myself aiming, over and over again, like I’d done for the past fifteen years.{/i}"
+
+    "{i}One arrow through the abdomen. One through the neck. I wouldn’t draw out his suffering. I wouldn’t break the covenants of war.{/i}"
+
+    "{i}But I wanted him to know it was me.{/i}"
+
+    "{i}Suddenly, we came upon the slope down to the river. Cheinan pulled her horse to a stop, and I did the same.{/i}" 
+
+    "{i}I scanned the bank, the narrow point of the river, the steppe beyond. All empty, except for me and Cheinan.{/i}" 
+
+    t "{i}Cheinan. Where is he? He’s not here, where is he?{/i}"
+
+    "{i}I felt panic gripping my chest. He’d gotten away. He was finally in my grasp and he’d escaped, it couldn’t be! I lowered my bow and spun my horse around to face Cheinan.{/i}" 
+    
+    "{i}What I saw confused me at first. Cheinan had her bow drawn, aimed at chest height. I turned to look over my shoulder. Had she seen something I had not?{/i}"
+    
+    "{i}Then I felt a sharp, searing pain in my chest. I must have lost my balance, the next thing I knew I was on the ground, on my back. I was confused, though I shouldn’t have been. It was a sensation I’d felt before.{/i}" 
+    
+    "{i}My vision was blurry as I looked up into the sky, aware in the periphery of Cheinan dismounting her horse and coming to kneel at my side.{/i}"
+    
+    t "{i}Chei...{/i}"
+    
+    "{i}Next I felt her open my outercoat, searching through my inner pockets. I weakly reached for the dagger at my belt, but she easily tore it from my hands and threw it far out of reach.{/i}" 
+
+    t "{i}Chei... why... I don’t...{/i}"
+    
+    "{i}I didn’t have a lot of time. I didn’t know what else to ask her. It didn’t even matter why. It was already done.{/i}"
+    
+    c "{i}Kind of a risk, don’t you think? Bringing this into battle. What if it fell into enemy hands?{/i}"
+
+    "{i}Cheinan lifted the disk from the satchel I had attached to my belt, and it disappearing in the folds of her own coat.{/i}"
+    
+    t "{i}No one could have... Could have...{/i}"
+    
+    "{i}My voice gurgled with liquid. Blood seeped from my mouth like drool, down my chin.{/i}"
+    
+    c "{i}Could have defeated you?{/i}"
+    
+    "{i}She lifted my head into her lap, and wiped away the blood from my lips with a finger, tenderly. I looked up into her face, thrown into shadow by the sun behind her.{/i}" 
+    
+    "{i}Like the first time I’d crossed the gate, and the kind Blue Ones scooped me into their arms and took me to their infirmary, tended my wounds, brought me back to life.{/i}" 
+    
+    "{i}Of all those who had spared me, who had saved me, who had betrayed me, who had died by my hand. It would be my own Cheinan that was my end.{/i}"
+    
+    "{i}It could have been no one else, I realized.{/i}" 
+    
+    "{i}Because I never could have fought her. Not even for my own life.{/i}" 
+    
+    "{i}Through my confusion and fading vision I hear the distant sounds of battle.{/i}"
+    
+    "{i}My men... what's going to happen to them… Without the relic to aid them, Vhiranzesh's forces will...{/i}"
+    
+    "{i}Why would she...{/i}"
+    
+    "{i}Why would...{/i}"
+
+    # TODO use more of the battle sequence by having this take place on the battlefield itself, the battle turns because of the betrayal. 
+
+    # have the battle start turning, then Cheinan leads her away a little bit but don't lean into the river description as much
+
 
 
     #back to camp
 
     scene camp_720 with fade
 
-    show yeni scared_scaled at left
+    show yeni scared at left
 
     stop music fadeout 2.0 
     
@@ -302,7 +417,7 @@ label start:
 
     scene mountain_720 with fade
 
-    show yeni neutral_scaled at left
+    show yeni neutral at left
 
     "And so, the climb begins."
 
@@ -362,7 +477,7 @@ label start:
 
     scene portal_720
 
-    show yeni scared_scaled at left
+    show yeni scared at left
 
     play music portal_mp3
 
@@ -386,7 +501,7 @@ label start:
 
     scene mountain_720 with fade
 
-    show yeni neutral_scaled at left
+    show yeni neutral at left
 
     stop music fadeout 2.0
 
@@ -414,7 +529,7 @@ label start:
 
     u "You... I don't know. You both... you both disappeared for a moment."
 
-    show yeni angry_scaled at left
+    show yeni angry at left
 
     y "Disappeared? What do you mean, disappeared??"
 
@@ -422,7 +537,7 @@ label start:
 
     u "It was like it... swallowed you. You and Ari both."
 
-    show yeni neutral_scaled at left
+    show yeni neutral at left
 
     "A chill runs down my spine, and I squeeze Ari in my arms. It takes me a moment to find my voice."
 

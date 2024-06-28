@@ -83,18 +83,23 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+            if not main_menu:
+                hbox:
+                    xpos 570
+                    ypos 90
+                    spacing 10
+                    if not main_menu:
+                        textbutton _("Main Menu"):
+                            action MainMenu() 
 
-            hbox:
-                xpos 650
-                ypos 90
-
-                if not main_menu:
-                    textbutton _("Main Menu"):
-                        action MainMenu() 
-
+                    textbutton _("Return"):
+                        action Return()
+            else:
                 textbutton _("Return"):
-                    xpos 20
-                    action Return()       
+                    xpos 700
+                    ypos 90
+                    action Return()
+
                 
 
 

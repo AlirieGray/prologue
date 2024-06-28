@@ -17,7 +17,7 @@ screen about():
         viewport id "abt":
             ypos 50
             xpos 50
-            ymaximum 400
+            ymaximum 440
             xmaximum 850
             yfill True
             xfill True
@@ -33,14 +33,10 @@ screen about():
                     text "[gui.about!t]\n"
 
                 text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
-        vbar value YScrollValue("abt") xpos .75 ypos .1 ymaximum 400
+        vbar value YScrollValue("abt") xpos 900 ypos .1 ymaximum 400
 
-        hbox:
-            ypos .8
-            xpos .05
-            vbox:
-                textbutton _("Return"): #TODO: fix all the return/main menu buttons positioning in the overlay popups
-                    action Return()      
+        textbutton _("Return"): #TODO: fix all the return/main menu buttons positioning in the overlay popups
+            action Return()      
 
 style about_label is gui_label
 style about_label_text is gui_label_text
